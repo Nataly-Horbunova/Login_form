@@ -42,14 +42,13 @@ class Form {
     }
 
     validateElement(element) {
+        console.log(this.validators)
         for (const key in this.validators) {
-            if (Object.hasOwnProperty.call(this.validators, key) && typeof this.validators[key] == "object") {
-
-                if (element.dataset[key]) {
-                    const validator = this.validators[key];
-                    if (!validator.isValid(element))
-                        return false;
-                }
+            console.log(key);
+            if (element.dataset[key]) {
+                const validator = this.validators[key];
+                if (!validator.isValid(element))
+                    return false;
             }
         }
         return true;

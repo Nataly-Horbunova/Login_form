@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <title>Solice</title>
+
+    <!-- ------------------- FONT AWESOME -------------- -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+          integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <!-- -------------------- CUSTOM STYLES---------------   -->
+    <link rel="stylesheet" href="./styles/main.css">
+
+</head>
+<body>
+
+<!-- ======================== HEADER ==================== -->
+
+<header class="header container">
+    <a href="#" class="logo-link">
+        <img src="./assets/logo.png" alt="logo" class="logo-img">
+        <div class="logo-text">Solice</div>
+    </a>
+</header>
+
+<!-- =======================  LOGIN SECTION ================ -->
+<main>
+    <section class="login-section container">
+        <div class="welcome-wrapper">
+            <h1 class="welcome-title">Welcome to Solice</h1>
+            <div class="welcome-text">Please enter your login credentials to access your account. If you do not have an
+                account yet, please click on the "Sign Up" button to create one.
+            </div>
+        </div>
+
+        <!-----------------        SIGN IN FORM  --------------->
+        <div class="sign-in-wrapper login-wrapper">
+            <h2 class="login-header">Sign in to Solice</h2>
+            <form action="#/signin" class="login-form" name="signInForm">
+                <input type="email" class="email input" name="email" placeholder="Email"
+                       data-error-label="signinEmailError" data-val="true" data-required="Please enter email address."
+                       data-pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+                       data-pattern-msg="Please enter valid email address.">
+                <span class="error" id="signinEmailError"></span>
+
+                <input type="password" class="password input" id="sign-in-password" placeholder="Password"
+                       data-error-label="signinPasswordError" data-val="true" data-required="Please enter password."
+                       data-pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{6,20}$"
+                       data-pattern-msg="The password must be between 6-20 characters and contain numbers,
+                       lowercase and uppercase latin characters and special characters.">
+                <span class="error" id="signinPasswordError"></span>
+
+                <a href="#/forgotpassword" class="forgot-password-link">Forgot password?</a>
+                <input type="submit" value="Sign in" class="btn">
+            </form>
+            <p class="below-form-text">Do not have an account? <a href="#/signup" class="link sign-up-link">Sign up</a>
+            </p>
+        </div>
+
+        <!-----------------    SIGN UP FORM  --------------->
+
+        <div class="sign-up-wrapper login-wrapper" hidden>
+            <h2 class="login-header">Create your account</h2>
+            <form action="#/signup" class="login-form" name="signUpForm">
+                <input type="text" class="name input" name="name" placeholder="Name"
+                       data-error-label="signupNameError" data-val="true" data-required="Please enter your name.">
+                <span class="error" id="signupNameError"></span>
+
+                <input type="text" class="surname input" name="surname" placeholder="Surname"
+                       data-error-label="signupSurnameError" data-val="true" data-required="Please enter your surname.">
+                <span class="error" id="signupSurnameError"></span>
+
+
+                <input type="email" class="email input" name="email" placeholder="Email"
+                       data-error-label="signupEmailError" data-val="true" data-required="Please enter email address."
+                       data-pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+                       data-pattern-msg="Please enter valid email address.">
+                <span class="error" id="signupEmailError"></span>
+
+
+                <input type="password" class="password input" id="sign-up-password" placeholder="Password"
+                       data-error-label="signupPasswordError" data-val="true" data-required="Please enter password."
+                       data-pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[^\w\s]).{6,20}$"
+                       data-pattern-msg="The password must be between 6-20 characters and contain numbers,
+                       lowercase and uppercase latin characters and special characters.">
+                <span class="error" id="signupPasswordError"></span>
+
+
+                <input type="password" class="password input" name="confirm-password" placeholder="Confirm password"
+                       data-error-label="signupConfirmPasswordError" data-val="true"
+                       data-required="Please confirm password." data-confirm="sign-up-password"
+                       data-confirm-msg="Passwords do not match.">
+                <span class="error" id="signupConfirmPasswordError"></span>
+
+                <div class="accept-terms-wrapper">
+                    <label class="checkbox-container">
+                        <input type="checkbox" name="accept-terms" id="accept-terms" data-val="true"
+                               data-checkbox="To continue, please read and accept our Terms of Service and Privacy Policy"
+                               data-error-label="signupAcceptTermsError">
+                        <div class="checkmark"></div>
+                    </label>
+                    <label for="accept-terms">I accept <a href="#" class="link">Terms of Service</a> and
+                        <a href="#" class="link">Privacy Policy</a>
+                    </label>
+                </div>
+                <span class="error" id="signupAcceptTermsError"></span>
+
+                <input type="submit" value="Create account" class="btn">
+            </form>
+
+            <p class="below-form-text">Already have an account?
+                <a href="#/signin" class="link sign-in-link">Sign in</a>
+            </p>
+        </div>
+
+        <!-----------------    FORGOT PASSWORD  --------------->
+
+        <div class="login-wrapper forgot-psw-wrapper" hidden>
+            <h2 class="login-header">Forgot your password?</h2>
+            <form action="#/forgotpassword" class="login-form" name="forgotPswForm">
+                <input type="email" class="email input" name="email" placeholder="Email"
+                       data-error-label="forgotPswEmailError" data-val="true" data-required="Please enter email address."
+                       data-pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+                       data-pattern-msg="Please enter valid email address.">
+                <span class="error" id="forgotPswEmailError"></span>
+
+                <input type="submit" value="Next" class="btn">
+            </form>
+
+            <a href="#/signin" class="back-to-sign-in-link">
+                <i class="fa-solid fa-chevron-left"></i>
+                <span class="back-text">Back to sign in</span>
+            </a>
+        </div>
+
+
+        <!-- -------------------   EMAIL SENT --------------------->
+
+<!--        <div class="login-wrapper email-sent-wrapper" hidden>-->
+<!--            <h2 class="login-header">Email sent</h2>-->
+<!--            <p class="email-sent-text">We've sent an email to <span>email@gmail.com</span> with a link to reset your-->
+<!--                password.-->
+<!--            </p>-->
+<!--            <a href="#/signin" class="back-to-sign-in-link">-->
+<!--                <i class="fa-solid fa-chevron-left"></i>-->
+<!--                <span class="back-text">Back to sign in</span>-->
+<!--            </a>-->
+<!--        </div>-->
+
+    </section>
+</main>
+
+<!-- ======================== FOOTER ==========================-->
+
+<footer class="footer container">
+    <div class="footer-rights">© 2014-2022 Solice Technology Co., Ltd. All rights reserved.</div>
+</footer>
+
+<script src="./scripts/App.js"></script>
+<script src="./scripts/Form.js"></script>
+<script src="./scripts/Validators.js"></script>
+<script src="./scripts/main.js"></script>
+</body>
+</html>

@@ -16,36 +16,32 @@ class App {
 
     initShowSignUpForm() {
         this.signUpLink.addEventListener('click', () => {
-            this.hideForm(this.signInFormWrapper);
-            this.showForm(this.signUpFormWrapper);
+            this.toggleForm(this.signInFormWrapper);
+            this.toggleForm(this.signUpFormWrapper);
         })
     }
 
     initShowSignInForm() {
         this.signInLink.addEventListener('click', () => {
-            this.hideForm(this.signUpFormWrapper);
-            this.showForm(this.signInFormWrapper);
+            this.toggleForm(this.signUpFormWrapper);
+            this.toggleForm(this.signInFormWrapper);
         });
 
         this.backToSignInLink.addEventListener('click', () => {
-            this.hideForm(this.forgotPswFormWrapper);
-            this.showForm(this.signInFormWrapper);
+            this.toggleForm(this.forgotPswFormWrapper);
+            this.toggleForm(this.signInFormWrapper);
         })
     }
 
     initShowForgotPasswordForm() {
         this.forgotPswLink.addEventListener('click', () => {
-            this.hideForm(this.signInFormWrapper);
-            this.showForm(this.forgotPswFormWrapper);
+            this.toggleForm(this.signInFormWrapper);
+            this.toggleForm(this.forgotPswFormWrapper);
         })
     }
 
-    showForm(form) {
-        form.hidden = false;
-    }
-
-    hideForm(form) {
-        form.hidden = true;
+    toggleForm(form) {
+        form.hidden = !form.hidden;
     }
 
     init() {

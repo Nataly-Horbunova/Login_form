@@ -42,7 +42,6 @@ class Form {
     }
 
     validateElement(element) {
-        console.log(this.validators)
         for (const key in this.validators) {
             console.log(key);
             if (element.dataset[key]) {

@@ -34,7 +34,6 @@ class Form {
         for (let i = 0; i < this.elements.length; i++) {
             const element = this.elements[i];
             let valid = this.validateElement(element);
-            console.log(valid);
             if (!valid) {
                 e.preventDefault();
             }
@@ -43,7 +42,6 @@ class Form {
 
     validateElement(element) {
         for (const key in this.validators) {
-            console.log(key);
             if (element.dataset[key]) {
                 const validator = this.validators[key];
                 if (!validator.isValid(element))
